@@ -646,7 +646,7 @@ hello4 $fname
 echo after function : $fname
 ```
 
-Thanks.
+Thanks. hello
 
 
 

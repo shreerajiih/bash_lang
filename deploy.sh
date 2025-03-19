@@ -28,11 +28,19 @@ do
             ;;
             
         pushOnly)
+
+            read -p "Enter Branch To Move Inside  " checkout_branch
+            git checkout $checkout_branch
+
             git add .
+
             echo -n "Enter commit message: "
             read commit_msg
             git commit -m "$commit_msg"
-            git push
+
+            read -p "Which Branch i push ? " branch_name
+            git push origin $branch_name
+
             echo "Code Push Successfully..."
             break
             ;;
