@@ -44,9 +44,29 @@ do
             echo "Code Push Successfully..."
             break
             ;;
+
+        createBranch)
+
+            read -p "Parent branch  " parent_branch
+            git checkout $parent_branch
+
+            read -p "New Branch name  " new_branch
+            git checkout -b $new_branch
+
+            read -p "You want to taken pull from other branch ? y or n" pull_y
+            if [ $pull_y -eq y ]
+            then
+                read -p "Which branch You Taken pull From ? " pull_branch_name
+                git pull origin $pull_branch_name
+            fi
+
+            echo branch created successfully....
+            break
+            ;;
             
         *)
             echo "Invalid option"
+            break
             ;;
     esac
 done
